@@ -35,6 +35,9 @@ $ npm install
 ## Running the app
 
 ```bash
+sudo chmod 777 /var/run/docker.sock
+docker run -p 6379:6379 redis
+
 # development
 $ npm run start
 

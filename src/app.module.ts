@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { BullModule } from '@nestjs/bull';
 import { TRANSCODE_QUEUE } from './constants';
+import { TranscodeConsumer } from './transcode.consumer';
 
 @Module({
   imports: [
@@ -17,6 +18,6 @@ import { TRANSCODE_QUEUE } from './constants';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, TranscodeConsumer],
 })
 export class AppModule {}
