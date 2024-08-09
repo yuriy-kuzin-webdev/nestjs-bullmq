@@ -8,6 +8,6 @@ export class TranscodeConsumer {
     private readonly logger = new Logger(TranscodeConsumer.name);
     @Process()
     async transcode(job: Job<unknown>) {
-        this.logger.log(job);
+        this.logger.log(JSON.stringify(job, null, 2));
     }
 }
