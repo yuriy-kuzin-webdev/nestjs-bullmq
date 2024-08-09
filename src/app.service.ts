@@ -14,7 +14,7 @@ export class AppService {
   }
 
   async transcode() {
-    await this.transcodeQueue.add({
+    return this.transcodeQueue.add({
       fileName: './file.mp3',
     })
   }

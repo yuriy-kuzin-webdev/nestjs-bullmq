@@ -8,6 +8,10 @@ export class TranscodeConsumer {
     private readonly logger = new Logger(TranscodeConsumer.name);
     @Process()
     async transcode(job: Job<unknown>) {
-        this.logger.log(JSON.stringify(job, null, 2));
+        this.logger.log(`Transcoding message ${job.id}`);
+        this.logger.debug('Data: ', job.data);
+        //Some transcoding
+        await new Promise<void>((resolve) => setTimeout(() => resolve(), 8000));
+        this.logger.log(`Transcoding complete for job: ${job.id}`);
     }
 }
