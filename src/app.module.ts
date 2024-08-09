@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { BullModule } from '@nestjs/bull';
+import { TRANSCODE_QUEUE } from './constants';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { BullModule } from '@nestjs/bull';
       },
     }),
     BullModule.registerQueue({
-      name: 'transcode',
+      name: TRANSCODE_QUEUE,
     }),
   ],
   controllers: [AppController],
