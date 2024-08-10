@@ -37,6 +37,8 @@ $ npm install
 ```bash
 sudo chmod 777 /var/run/docker.sock
 docker run -p 6379:6379 redis
+docker build -t yuriikuzin/nestjs-bullmq .
+docker image push yuriikuzin/nestjs-bullmq
 
 # development
 $ npm run start
